@@ -1,34 +1,27 @@
 # On Fourier and Hadamard matrices of prime order
 
-**Teo B and Chat GPT**, November 2026
+Companion code for the paper by Teo B and Chat GPT. Section numbers below refer to the manuscript. The original order-11 inputs, programs and certificates are kept together in order11/.
 
-How much of the Fourier matrix $F_p$ must one see to recognize it inside a complex Hadamard matrix of prime order $p$? For regular and Butson matrices, a single block of $F_p$ suffices at every odd prime. Throughout, matrices are considered equivalent up to permutations of rows and columns and multiplication of rows and columns by scalars of modulus one.
+## Running the checks
 
-## Main results
+From the extracted code003 directory, with Python 3.10 or later and a C++17 compiler:
 
-- **Entrywise powers.** Raising each entry of a regular or Butson matrix of order $p$ to the $p$th power gives either a Hadamard matrix or a matrix of rank one. Rank one occurs exactly when the original matrix is equivalent to a Butson matrix of level $p$.
-- **Fourier rows.** For every odd prime $p$, a regular or Butson matrix of order $p$ is equivalent to $F_p$ if it contains $(p-1)/2$ distinct Fourier rows in a common column ordering.
-- **Two-orbit symmetry.** For every odd prime $p\leq 109$, a Butson matrix of order and level $p$ is equivalent to $F_p$ if it admits a simultaneous row and column symmetry with one fixed point and two cycles of length $(p-1)/2$ on each side.
-- **The missing border.** Take the rows and columns of $F_p$ indexed by the nonzero squares modulo $p$. For every odd prime $p$, any regular or Butson matrix of order $p$ containing a submatrix equivalent to this block is itself equivalent to $F_p$.
+    python3 -m venv .venv
+    . .venv/bin/activate
+    python -m pip install -r requirements.txt
+    python run.py
 
-## Contents
+To run one part, use e.g. `python run.py order11` or `python run.py corners`. The names accepted are `w19`, `order11`, `minors`, `orbits` and `corners`. Each group prints PASS after all its checks have passed. The orbits group includes an exhaustive comparison of two generators at order 31 and takes the longest. The groups run serially. On a Mac the C++ compiler supplied by Command Line Tools is sufficient. The default compiler is `c++`; to select another, set `CXX`. Python assertions must be enabled.
 
-- [003.pdf](003.pdf) — the paper (42 pages).
-- [003.tex](003.tex) — LaTeX source.
-- [code003/](code003/) — Python and C++ programs, inputs, and certificates for the finite calculations.
-- [code003/README.md](code003/README.md) — instructions for reproducing the checks, organized by section of the paper.
+The runner makes a fresh temporary directory for compiled programs and regenerated order-11 results. The archived data stay in place. To keep a transcript, redirect standard output to a file. Individual historical order-11 programs write outputs next to themselves when invoked directly.
 
-## Running the code
+| Folder | Section | What to check |
+| --- | --- | --- |
+| w19 | 2 | exponents.txt gives the displayed 19-by-19 matrix. completions.py enumerates the sign choices by exact polynomial pseudo-division over the Eisenstein integers, checks the four surviving representatives, and computes the minors 19, 98, 46 and 58 modulo 101. |
+| order11/a_branch | 4 | The three-row incidence graphs, cycle colors, normalized labels and the Laurent coefficients of the affine example. brute_labels.cpp independently counts the labels. The six counts are 40, 368, 480, 3744, 2592 and 2880. |
+| order11/a_square | 4 | Regenerate all 3441 dephased rows and the 2016 compatibility edges. The C++ clique search and the Python neighborhood check recover the unique Fourier clique. exclusion_certificate.json gives the missing neighbor edges. |
+| minors | 6 | Integer counts of minor magnitudes, including 144 and 225 in the two blocks at order 19. A separate floating-point illustration compares polar factors and varies the free phase. |
+| orbits | 7 | Two C++ programs enumerate and compare the complete word lists through 31. small.py checks complementary and mixed differences. odd.py verifies the character-polynomial calculations, even.py and parity.py verify the printed half-word and rank tables, and prime109.py checks the lift and the two squared-gap matrices at 109. |
+| corners | 8–9 | deletions.cpp enumerates the normalized columns through 103. anchors.py reproduces all twelve selected rows at 503. strips.py reconstructs four test examples over exact cyclotomic fields at 5, 7 and 11. inverse.py illustrates the one-deletion argument at small primes. |
 
-The checks use Python 3.10 or later, NumPy, SymPy, and a C++17 compiler. From the repository root, run
-
-```sh
-cd code003
-python3 -m venv ../code003_env
-. ../code003_env/bin/activate
-python -m pip install -r requirements.txt
-python run.py
-```
-
-To run just the order-11 enumeration and verify its certificates, use `python run.py order11`. The other groups are `w19`, `minors`, `orbits`, and `corners`. Each group prints `PASS` when its checks finish successfully.
-
+The symmetry range through 109 and the doubly deleted corner range through 103 are different tests. The rank and recursion figures are checked against the manuscript. The general theorems, including the border theorem of Section 10, have proofs in the paper. The strip examples use Fourier-equivalent inputs with permutations and phases applied outside the prescribed rectangle. They do not search for counterexamples of exponent rank five.

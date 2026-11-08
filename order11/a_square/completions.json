@@ -1,0 +1,8 @@
+{
+  "vertices": 3441,
+  "edges": 2016,
+  "search_nodes": 10,
+  "completion_cliques": [
+    [3440,2975,2481,2009,1546,1493,976,514,40]
+  ]
+}

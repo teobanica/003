@@ -1,0 +1,20 @@
+{
+  "EE": {
+    "degree_graph_isomorphism_classes": 2,
+    "phase_feasible_classes": 1,
+    "agrees_with_cycle_matching_enumeration": true
+  },
+  "EF": {
+    "degree_graph_isomorphism_classes": 4,
+    "phase_feasible_classes": 1,
+    "agrees_with_cycle_matching_enumeration": true
+  },
+  "FF": {
+    "degree_graph_isomorphism_classes": 7,
+    "phase_feasible_classes": 4,
+    "agrees_with_cycle_matching_enumeration": true
+  },
+  "verified_normalized_label_assignments": 10104,
+  "verified_color_representations": 16,
+  "six_matrix_witnesses_and_symbolic_affine_family_exact": true
+}

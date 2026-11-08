@@ -1,0 +1,31 @@
+{
+  "independently_generated_rows": 3441,
+  "compatibility_edges": 2016,
+  "degree_histogram": {
+    "0": 2640,
+    "3": 660,
+    "8": 135,
+    "162": 6
+  },
+  "nonfourier_vertices_excluded_by_degree": 3300,
+  "nonfourier_degree8_vertices_with_missing_neighbor_edge": 132,
+  "fourier_vertices_zero_based": [
+    40,
+    514,
+    976,
+    1493,
+    1546,
+    2009,
+    2481,
+    2975,
+    3440
+  ],
+  "fourier_vertices_form_K9": true,
+  "only_square_completion_is_fourier": true,
+  "maximal_all_A_extension_size_by_nonfourier_row": {
+    "3": 2640,
+    "4": 660,
+    "5": 132
+  },
+  "elapsed_seconds": 7.445
+}

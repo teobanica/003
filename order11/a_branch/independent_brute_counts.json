@@ -1,0 +1,41 @@
+{
+  "method": "Independent C++17 Cartesian-product enumeration with no incremental edge-difference pruning",
+  "counts": [
+    {
+      "case": "EE",
+      "normalized_labels": 40,
+      "full_assignments": 161051,
+      "agrees_with_python": true
+    },
+    {
+      "case": "EF",
+      "normalized_labels": 368,
+      "full_assignments": 1771561,
+      "agrees_with_python": true
+    },
+    {
+      "case": "FF-1",
+      "normalized_labels": 480,
+      "full_assignments": 1771561,
+      "agrees_with_python": true
+    },
+    {
+      "case": "FF-2",
+      "normalized_labels": 3744,
+      "full_assignments": 19487171,
+      "agrees_with_python": true
+    },
+    {
+      "case": "FF-3",
+      "normalized_labels": 2592,
+      "full_assignments": 19487171,
+      "agrees_with_python": true
+    },
+    {
+      "case": "FF-4",
+      "normalized_labels": 2880,
+      "full_assignments": 19487171,
+      "agrees_with_python": true
+    }
+  ]
+}

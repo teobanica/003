@@ -1,0 +1,15 @@
+{
+  "candidate_rows": 3441,
+  "sha256_rows_text": "1fdd68fc7a387194e317a0535c5c151e481d6dc7d888b276342e806e832caee8",
+  "fourier_candidate_indices_zero_based": [
+    40,
+    514,
+    976,
+    1493,
+    1546,
+    2009,
+    2481,
+    2975,
+    3440
+  ]
+}

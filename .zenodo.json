@@ -1,0 +1,20 @@
+{
+  "title": "On Fourier and Hadamard matrices of prime order",
+  "description": "<p>We study how much of the Fourier matrix of prime order is needed to recognize it among regular or Butson Hadamard matrices. For every odd prime, the block whose rows and columns are indexed by the nonzero squares determines the Fourier matrix up to equivalence. We also prove an entrywise power dichotomy and obtain a recognition criterion from a two-orbit symmetry at every odd prime through 109.</p><p>The repository contains the paper, its LaTeX source, and the Python and C++ programs, inputs, and certificates for the finite calculations. ChatGPT assisted with developing mathematical arguments, drafting the manuscript, and writing and checking the computational code. The paper carries the byline <em>Teo B and Chat GPT</em>.</p>",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {
+      "name": "Banica, Teo",
+      "orcid": "0000-0003-4680-0364"
+    }
+  ],
+  "keywords": [
+    "Fourier matrices",
+    "complex Hadamard matrices",
+    "regular Hadamard matrices",
+    "Butson matrices",
+    "quadratic residues",
+    "computer-assisted proofs"
+  ]
+}
